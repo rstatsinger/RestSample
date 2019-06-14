@@ -1,0 +1,28 @@
+
+CONTAINER ONLY MODE
+
+Many microservices built today are containerized, with a large portion built and deployed as Docker containers. This section describes how things can be integrated during Docker image builds and deployments.
+
+Definitions
+Target Application : The JAR artifact of the target application built using either a custom build script or a CI such as Jenkins or Travis CI. In this section, we will identify this as a Java application called app.jar
+
+Target Image: The container image that is run in production which contains the target jar. 
+
+Deployment Options
+There are two ways to integrate the solution with the containerized target application:
+
+Mode	Summary
+1
+
+Container-only
+
+microagent execute from within the container during application container run.
+
+2
+
+Host + Container
+
+During container run, only the agent is run for each execution.
+
+1. Container-only Mode
+In this mode, during the container build, we need to prepare the image with all dependencies bundled in it with the application. We first need to fetch the sl binary and copy the configuration (config.json) generated from the authentication steps outlined in Authenticating. There can be two ways to achieve the container-only solution.

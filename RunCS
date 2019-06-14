@@ -1,0 +1,2 @@
+
+java -Dcontrast.standalone.appname=RestSample2 -javaagent:/Users/robertstatsinger/ContrastAgents/eval/contrast.jar -jar target/restsample-0.0.1.jar --server.port=3030 &
